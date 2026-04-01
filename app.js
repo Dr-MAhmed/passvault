@@ -11,6 +11,7 @@ function saveToStorage() {
 function loadFromStorage() {
     const stored = localStorage.getItem(STORAGE_KEY);
     entries = stored ? JSON.parse(stored) : [];
+    if (!Array.isArray(entries)) entries = [];
 }
 
 function generatePassword(length = 16, options = {}) {
